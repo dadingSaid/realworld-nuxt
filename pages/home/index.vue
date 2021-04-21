@@ -5,6 +5,7 @@
         <h1 class="logo-font">conduit</h1>
         <p>A place to share your knowledge.</p>
       </div>
+      <!-- 11 -->
     </div>
 
     <div class="container page">
@@ -86,7 +87,7 @@
 <script>
 export default {
   name: 'home',
-  data() {
+  data () {
     return {
 
     }
@@ -94,7 +95,7 @@ export default {
   create () {
   },
   methods: {
-  },
+  }
 }
 </script>
 
