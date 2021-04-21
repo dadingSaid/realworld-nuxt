@@ -1,16 +1,14 @@
 <template>
   <div class="home-page">
-
     <div class="banner">
       <div class="container">
-        <h1 class="logo-font">拉勾教育</h1>
+        <h1 class="logo-font">哈哈</h1>
         <p>A place to share your knowledge.</p>
       </div>
     </div>
 
     <div class="container page">
       <div class="row">
-
         <div class="col-md-9">
           <div class="feed-toggle">
             <ul class="nav nav-pills outline-active">
@@ -60,29 +58,28 @@
             </ul>
           </div>
 
-          <div
-            class="article-preview"
-            v-for="article in articles"
-            :key="article.slug"
-          >
+          <div class="article-preview" v-for="article in articles" :key="article.slug">
             <div class="article-meta">
-              <nuxt-link :to="{
+              <nuxt-link
+                :to="{
                 name: 'profile',
                 params: {
                   username: article.author.username
                 }
-              }">
+              }"
+              >
                 <img :src="article.author.image" />
               </nuxt-link>
               <div class="info">
-                <nuxt-link class="author" :to="{
+                <nuxt-link
+                  class="author"
+                  :to="{
                   name: 'profile',
                   params: {
                     username: article.author.username
                   }
-                }">
-                  {{ article.author.username }}
-                </nuxt-link>
+                }"
+                >{{ article.author.username }}</nuxt-link>
                 <span class="date">{{ article.createdAt | date('MMM DD, YYYY') }}</span>
               </div>
               <button
@@ -93,7 +90,8 @@
                 @click="onFavorite(article)"
                 :disabled="article.favoriteDisabled"
               >
-                <i class="ion-heart"></i> {{ article.favoritesCount }}
+                <i class="ion-heart"></i>
+                {{ article.favoritesCount }}
               </button>
             </div>
             <nuxt-link
@@ -137,7 +135,6 @@
             </ul>
           </nav>
           <!-- /分页列表 -->
-
         </div>
 
         <div class="col-md-3">
@@ -160,10 +157,8 @@
             </div>
           </div>
         </div>
-
       </div>
     </div>
-
   </div>
 </template>
 
@@ -242,5 +237,4 @@ export default {
 </script>
 
 <style>
-
 </style>
