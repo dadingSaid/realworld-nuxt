@@ -1,8 +1,7 @@
 const cookieparser = process.server ? require('cookieparser') : undefined
 
-// nuxt中已经集成了vuex，不用特地去安装vuex，只要定义一个store文件夹导出对象即可使用
-// 在服务器渲染期间运行的都是同一个实例
-// 为了防止数据冲突，务必要把 state 定义为一个函数，返回一个对象，确保返回的都是一个动态的对象
+// 在服务端渲染期间运行都是同一个实例
+// 为了防止数据冲突，务必要把 state 定义成一个函数，返回数据对象
 export const state = () => {
   return {
     // 当前登录用户的登录状态
@@ -17,10 +16,10 @@ export const mutations = {
 }
 
 export const actions = {
-  // 这里是nuxt专门提供的方法
-  // 这个action会在服务端渲染期间自动调用，只在服务端运行
+  // nuxtServerInit 是一个特殊的 action 方法
+  // 这个 action 会在服务端渲染期间自动调用
+  // 作用：初始化容器数据，传递数据给客户端使用
   nuxtServerInit ({ commit }, { req }) {
-    console.log('nuxtServerInit')
     let user = null
 
     // 如果请求头中有 Cookie

@@ -1,5 +1,5 @@
 {
-  "name": "realworld-nuxt",
+  "name": "realworld-nuxtjs",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -11,20 +11,12 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "axios": "^0.21.1",
-    "babel-eslint": "^10.1.0",
+  "dependencies": {
+    "axios": "^0.19.2",
     "cookieparser": "^0.1.0",
-    "eslint": "^7.24.0",
-    "eslint-config-standard": "^16.0.2",
-    "eslint-plugin-html": "^6.1.2",
-    "eslint-plugin-import": "^2.22.1",
-    "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-promise": "^5.1.0",
-    "eslint-plugin-sonarjs": "^0.6.0",
-    "eslint-plugin-standard": "^5.0.0",
-    "eslint-plugin-vue": "^7.9.0",
+    "dayjs": "^1.8.28",
     "js-cookie": "^2.2.1",
-    "nuxt": "^2.15.4"
+    "markdown-it": "^11.0.0",
+    "nuxt": "^2.12.2"
   }
 }
