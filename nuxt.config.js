@@ -3,10 +3,6 @@
  */
 
 module.exports = {
-  server: {
-    host: '0.0.0.0',
-    port: 80
-  },
   router: {
     linkActiveClass: 'active',
     // 自定义路由表规则
@@ -62,7 +58,7 @@ module.exports = {
 
   server: {
     host: '0.0.0.0',
-    port: 3000
+    port: 80
   },
 
   // 注册插件
