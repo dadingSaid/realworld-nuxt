@@ -2,7 +2,7 @@
   <div class="home-page">
     <div class="banner">
       <div class="container">
-        <h1 class="logo-font">学习中心222</h1>
+        <h1 class="logo-font">学习中心333666</h1>
         <p>A place to share your knowledge.</p>
       </div>
     </div>
