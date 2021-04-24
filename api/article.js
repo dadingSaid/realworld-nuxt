@@ -14,10 +14,10 @@ export const getYourFeedArticles = params => {
   return request({
     method: 'GET',
     url: '/api/articles/feed',
-    params,
+    params
     // headers: {
     //   // 添加用户身份，数据格式：Token空格Token数据
-    //   Authorization: `Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6NDgxMTYsInVzZXJuYW1lIjoibHB6OTk5IiwiZXhwIjoxNTk3NzQxNTA4fQ.2yO8Fss4hYnvsIN2UYHsutQ1hmYqSSAA-UrIRnP4DOY`
+    //   Authorization: 'Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MTYzNzg2LCJ1c2VybmFtZSI6ImRpbmdAMTYzLmNvbSIsImV4cCI6MTYyNDMzMzkyOH0.USm0ilXS6AX0U1o1xoM2c8g43qhKH_JV4Lkpb2dcnK8'
     // }
   })
 }

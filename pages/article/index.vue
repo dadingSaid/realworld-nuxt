@@ -1,40 +1,32 @@
 <template>
-  <div class="article-page">
+  <div>
+    <div class="article-page">
+      <div class="banner">
+        <div class="container">
+          <h1>{{ article.title }}</h1>
 
-    <div class="banner">
-      <div class="container">
-
-        <h1>{{ article.title }}</h1>
-
-        <article-meta :article="article" />
-
-      </div>
-    </div>
-
-    <div class="container page">
-
-      <div class="row article-content">
-        <div class="col-md-12" v-html="article.body"></div>
+          <article-meta :article="article" />
+        </div>
       </div>
 
-      <hr />
-
-      <div class="article-actions">
-        <article-meta :article="article" />
-      </div>
-
-      <div class="row">
-
-        <div class="col-xs-12 col-md-8 offset-md-2">
-
-          <article-comments :article="article" />
-
+      <div class="container page">
+        <div class="row article-content">
+          <div class="col-md-12" v-html="article.body"></div>
         </div>
 
+        <hr />
+
+        <div class="article-actions">
+          <article-meta :article="article" />
+        </div>
+
+        <div class="row">
+          <div class="col-xs-12 col-md-8 offset-md-2">
+            <article-comments :article="article" />
+          </div>
+        </div>
       </div>
-
     </div>
-
   </div>
 </template>
 
@@ -43,9 +35,14 @@ import { getArticle } from '@/api/article'
 import MarkdownIt from 'markdown-it'
 import ArticleMeta from './components/article-meta'
 import ArticleComments from './components/article-comments'
-
 export default {
-  name: 'ArticleIndex',
+  name: '',
+  components: {
+    ArticleMeta,
+    ArticleComments
+  },
+  props: {},
+  middleware: ['authenticated'],
   async asyncData ({ params }) {
     const { data } = await getArticle(params.slug)
     const { article } = data
@@ -55,21 +52,26 @@ export default {
       article
     }
   },
-  components: {
-    ArticleMeta,
-    ArticleComments
+  data () {
+    return {
+
+    }
   },
   head () {
     return {
       title: `${this.article.title} - RealWorld`,
       meta: [
+        // hid覆盖父组件中相同的标签
         { hid: 'description', name: 'description', content: this.article.description }
       ]
     }
+  },
+  create () {
+  },
+  methods: {
   }
 }
 </script>
 
-<style>
-
+<style lang='scss' scoped>
 </style>

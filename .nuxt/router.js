@@ -1,69 +1,82 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import { normalizeURL, decode } from 'ufo'
 import { interopDefault } from './utils'
 import scrollBehavior from './router.scrollBehavior.js'
 
-const _42f72ca9 = () => interopDefault(import('..\\pages\\layout' /* webpackChunkName: "" */))
-const _2d597a1e = () => interopDefault(import('..\\pages\\home' /* webpackChunkName: "" */))
-const _7e0e120a = () => interopDefault(import('..\\pages\\login' /* webpackChunkName: "" */))
-const _0bf8880a = () => interopDefault(import('..\\pages\\profile' /* webpackChunkName: "" */))
-const _045889e2 = () => interopDefault(import('..\\pages\\settings' /* webpackChunkName: "" */))
-const _372852ec = () => interopDefault(import('..\\pages\\editor' /* webpackChunkName: "" */))
-const _1a7a6952 = () => interopDefault(import('..\\pages\\article' /* webpackChunkName: "" */))
+const _8f09778e = () => interopDefault(import('..\\pages\\layout' /* webpackChunkName: "" */))
+const _fdc394a4 = () => interopDefault(import('..\\pages\\home' /* webpackChunkName: "" */))
+const _ba3e6f0c = () => interopDefault(import('..\\pages\\login' /* webpackChunkName: "" */))
+const _2934fd72 = () => interopDefault(import('..\\pages\\settings' /* webpackChunkName: "" */))
+const _a6a72b08 = () => interopDefault(import('..\\pages\\editor' /* webpackChunkName: "" */))
+const _2dc1a5c7 = () => interopDefault(import('..\\pages\\article' /* webpackChunkName: "" */))
+const _46f7627a = () => interopDefault(import('..\\pages\\profile' /* webpackChunkName: "" */))
 
-// TODO: remove in Nuxt 3
 const emptyFn = () => {}
-const originalPush = Router.prototype.push
-Router.prototype.push = function push (location, onComplete = emptyFn, onAbort) {
-  return originalPush.call(this, location, onComplete, onAbort)
-}
 
 Vue.use(Router)
 
 export const routerOptions = {
   mode: 'history',
-  base: decodeURI('/'),
+  base: '/',
   linkActiveClass: 'active',
   linkExactActiveClass: 'nuxt-link-exact-active',
   scrollBehavior,
 
   routes: [{
     path: "/",
-    component: _42f72ca9,
+    component: _8f09778e,
     children: [{
       path: "",
-      component: _2d597a1e,
+      component: _fdc394a4,
       name: "home"
     }, {
-      path: "/login",
-      component: _7e0e120a,
+      path: "login",
+      component: _ba3e6f0c,
       name: "login"
     }, {
-      path: "/register",
-      component: _7e0e120a,
+      path: "register",
+      component: _ba3e6f0c,
       name: "register"
     }, {
-      path: "/profile/:username",
-      component: _0bf8880a,
-      name: "profile"
-    }, {
-      path: "/settings",
-      component: _045889e2,
+      path: "settings",
+      component: _2934fd72,
       name: "settings"
     }, {
       path: "/editor",
-      component: _372852ec,
+      component: _a6a72b08,
       name: "editor"
     }, {
-      path: "/article/:slug",
-      component: _1a7a6952,
+      path: "article/:slug?",
+      component: _2dc1a5c7,
       name: "article"
+    }, {
+      path: "/profile/:username",
+      component: _46f7627a,
+      name: "profile"
     }]
   }],
 
   fallback: false
 }
 
-export function createRouter () {
-  return new Router(routerOptions)
+export function createRouter (ssrContext, config) {
+  const base = (config._app && config._app.basePath) || routerOptions.base
+  const router = new Router({ ...routerOptions, base  })
+
+  // TODO: remove in Nuxt 3
+  const originalPush = router.push
+  router.push = function push (location, onComplete = emptyFn, onAbort) {
+    return originalPush.call(this, location, onComplete, onAbort)
+  }
+
+  const resolve = router.resolve.bind(router)
+  router.resolve = (to, current, append) => {
+    if (typeof to === 'string') {
+      to = normalizeURL(to)
+    }
+    return resolve(to, current, append)
+  }
+
+  return router
 }

@@ -2,7 +2,7 @@
   <div class="home-page">
     <div class="banner">
       <div class="container">
-        <h1 class="logo-font">丁磊server</h1>
+        <h1 class="logo-font">呵呵哈哈</h1>
         <p>A place to share your knowledge.</p>
       </div>
     </div>
@@ -175,7 +175,7 @@ import { mapState } from 'vuex'
 export default {
   name: 'HomeIndex',
   async asyncData ({ query }) {
-    const page = Number.parseInt(query.page|| 1)
+    const page = Number.parseInt(query.page || 1)
     const limit = 20
     const tab = query.tab || 'global_feed'
     const tag = query.tag
@@ -184,7 +184,7 @@ export default {
       ? getArticles
       : getYourFeedArticles
 
-    const [ articleRes, tagRes ] = await Promise.all([
+    const [articleRes, tagRes] = await Promise.all([
       loadArticles({
         limit,
         offset: (page - 1) * limit,

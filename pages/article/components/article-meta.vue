@@ -1,22 +1,25 @@
 <template>
   <div class="article-meta">
-    <nuxt-link :to="{
+    <nuxt-link
+      :to="{
       name: 'profile',
       params: {
         username: article.author.username
       }
-    }">
+    }"
+    >
       <img :src="article.author.image" />
     </nuxt-link>
     <div class="info">
-      <nuxt-link class="author" :to="{
+      <nuxt-link
+        class="author"
+        :to="{
         name: 'profile',
         params: {
           username: article.author.username
         }
-      }">
-        {{ article.author.username }}
-      </nuxt-link>
+      }"
+      >{{ article.author.username }}</nuxt-link>
       <span class="date">{{ article.createdAt | date('MMM DD, YYYY') }}</span>
     </div>
     <button
@@ -27,7 +30,8 @@
     >
       <i class="ion-plus-round"></i>
       &nbsp;
-      Follow Eric Simons <span class="counter">(10)</span>
+      Follow Eric Simons
+      <span class="counter">(10)</span>
     </button>
     &nbsp;&nbsp;
     <button
@@ -38,7 +42,8 @@
     >
       <i class="ion-heart"></i>
       &nbsp;
-      Favorite Post <span class="counter">(29)</span>
+      Favorite Post
+      <span class="counter">(29)</span>
     </button>
   </div>
 </template>
@@ -56,5 +61,4 @@ export default {
 </script>
 
 <style>
-
 </style>
