@@ -1,43 +1,51 @@
 [
   {
     "path": "/",
-    "component": "G:\\\\luyilu\\\\01lagou\\\\project\\\\vue\\\\realworld-nuxt\\\\pages\\\\layout",
+    "component": "C:\\\\Users\\\\meizi\\\\Desktop\\\\新建文件夹\\\\realworld-nuxt-githubActions\\\\pages\\\\layout",
     "children": [
       {
         "path": "",
         "name": "home",
-        "component": "G:\\\\luyilu\\\\01lagou\\\\project\\\\vue\\\\realworld-nuxt\\\\pages\\\\home"
+        "component": "C:\\\\Users\\\\meizi\\\\Desktop\\\\新建文件夹\\\\realworld-nuxt-githubActions\\\\pages\\\\home",
+        "_name": "_1660f371"
       },
       {
-        "path": "login",
+        "path": "/login",
         "name": "login",
-        "component": "G:\\\\luyilu\\\\01lagou\\\\project\\\\vue\\\\realworld-nuxt\\\\pages\\\\login"
+        "component": "C:\\\\Users\\\\meizi\\\\Desktop\\\\新建文件夹\\\\realworld-nuxt-githubActions\\\\pages\\\\login",
+        "_name": "_941479d2"
       },
       {
-        "path": "register",
+        "path": "/register",
         "name": "register",
-        "component": "G:\\\\luyilu\\\\01lagou\\\\project\\\\vue\\\\realworld-nuxt\\\\pages\\\\login"
-      },
-      {
-        "path": "settings",
-        "name": "settings",
-        "component": "G:\\\\luyilu\\\\01lagou\\\\project\\\\vue\\\\realworld-nuxt\\\\pages\\\\settings"
-      },
-      {
-        "path": "/editor",
-        "name": "editor",
-        "component": "G:\\\\luyilu\\\\01lagou\\\\project\\\\vue\\\\realworld-nuxt\\\\pages\\\\editor"
-      },
-      {
-        "path": "article/:slug?",
-        "name": "article",
-        "component": "G:\\\\luyilu\\\\01lagou\\\\project\\\\vue\\\\realworld-nuxt\\\\pages\\\\article"
+        "component": "C:\\\\Users\\\\meizi\\\\Desktop\\\\新建文件夹\\\\realworld-nuxt-githubActions\\\\pages\\\\login",
+        "_name": "_941479d2"
       },
       {
         "path": "/profile/:username",
         "name": "profile",
-        "component": "G:\\\\luyilu\\\\01lagou\\\\project\\\\vue\\\\realworld-nuxt\\\\pages\\\\profile"
+        "component": "C:\\\\Users\\\\meizi\\\\Desktop\\\\新建文件夹\\\\realworld-nuxt-githubActions\\\\pages\\\\profile",
+        "_name": "_2e8fac52"
+      },
+      {
+        "path": "/settings",
+        "name": "settings",
+        "component": "C:\\\\Users\\\\meizi\\\\Desktop\\\\新建文件夹\\\\realworld-nuxt-githubActions\\\\pages\\\\settings",
+        "_name": "_80e5bc96"
+      },
+      {
+        "path": "/editor",
+        "name": "editor",
+        "component": "C:\\\\Users\\\\meizi\\\\Desktop\\\\新建文件夹\\\\realworld-nuxt-githubActions\\\\pages\\\\editor",
+        "_name": "_07927902"
+      },
+      {
+        "path": "/article/:slug",
+        "name": "article",
+        "component": "C:\\\\Users\\\\meizi\\\\Desktop\\\\新建文件夹\\\\realworld-nuxt-githubActions\\\\pages\\\\article",
+        "_name": "_60fb25b8"
       }
-    ]
+    ],
+    "_name": "_08059d3c"
   }
 ]
