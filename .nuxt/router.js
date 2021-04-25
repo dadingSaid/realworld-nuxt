@@ -4,13 +4,13 @@ import { normalizeURL, decode } from 'ufo'
 import { interopDefault } from './utils'
 import scrollBehavior from './router.scrollBehavior.js'
 
-const _8f09778e = () => interopDefault(import('..\\pages\\layout' /* webpackChunkName: "" */))
-const _fdc394a4 = () => interopDefault(import('..\\pages\\home' /* webpackChunkName: "" */))
-const _ba3e6f0c = () => interopDefault(import('..\\pages\\login' /* webpackChunkName: "" */))
-const _2934fd72 = () => interopDefault(import('..\\pages\\settings' /* webpackChunkName: "" */))
-const _a6a72b08 = () => interopDefault(import('..\\pages\\editor' /* webpackChunkName: "" */))
-const _2dc1a5c7 = () => interopDefault(import('..\\pages\\article' /* webpackChunkName: "" */))
-const _46f7627a = () => interopDefault(import('..\\pages\\profile' /* webpackChunkName: "" */))
+const _08059d3c = () => interopDefault(import('..\\pages\\layout' /* webpackChunkName: "" */))
+const _1660f371 = () => interopDefault(import('..\\pages\\home' /* webpackChunkName: "" */))
+const _941479d2 = () => interopDefault(import('..\\pages\\login' /* webpackChunkName: "" */))
+const _2e8fac52 = () => interopDefault(import('..\\pages\\profile' /* webpackChunkName: "" */))
+const _80e5bc96 = () => interopDefault(import('..\\pages\\settings' /* webpackChunkName: "" */))
+const _07927902 = () => interopDefault(import('..\\pages\\editor' /* webpackChunkName: "" */))
+const _60fb25b8 = () => interopDefault(import('..\\pages\\article' /* webpackChunkName: "" */))
 
 const emptyFn = () => {}
 
@@ -25,35 +25,35 @@ export const routerOptions = {
 
   routes: [{
     path: "/",
-    component: _8f09778e,
+    component: _08059d3c,
     children: [{
       path: "",
-      component: _fdc394a4,
+      component: _1660f371,
       name: "home"
     }, {
-      path: "login",
-      component: _ba3e6f0c,
+      path: "/login",
+      component: _941479d2,
       name: "login"
     }, {
-      path: "register",
-      component: _ba3e6f0c,
+      path: "/register",
+      component: _941479d2,
       name: "register"
     }, {
-      path: "settings",
-      component: _2934fd72,
+      path: "/profile/:username",
+      component: _2e8fac52,
+      name: "profile"
+    }, {
+      path: "/settings",
+      component: _80e5bc96,
       name: "settings"
     }, {
       path: "/editor",
-      component: _a6a72b08,
+      component: _07927902,
       name: "editor"
     }, {
-      path: "article/:slug?",
-      component: _2dc1a5c7,
+      path: "/article/:slug",
+      component: _60fb25b8,
       name: "article"
-    }, {
-      path: "/profile/:username",
-      component: _46f7627a,
-      name: "profile"
     }]
   }],
 
