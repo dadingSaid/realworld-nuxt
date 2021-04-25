@@ -2,11 +2,10 @@
   <div class="home-page">
     <div class="banner">
       <div class="container">
-        <h1 class="logo-font">realWorld</h1>
+        <h1 class="logo-font">呵呵哈哈</h1>
         <p>A place to share your knowledge.</p>
       </div>
     </div>
-    <!-- test -->
 
     <div class="container page">
       <div class="row">
